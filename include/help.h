@@ -1,6 +1,5 @@
-#ifndef HELP_H
-#define HELP_H
-
-void print_help();
-
-#endif // HELP_H
+#ifndef Help_h
+#define Help_h
+#include <stdio.h>
+void help();
+#endif
