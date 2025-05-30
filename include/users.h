@@ -1,6 +1,5 @@
-#ifndef USERS_H
-#define USERS_H
-
-void print_users();
-
-#endif // USERS_H
+#ifndef Users_h
+#define Users_h
+#include <stdio.h>
+void users();
+#endif
