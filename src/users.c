@@ -1,15 +1,10 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <pwd.h>
-#include <string.h>
-#include "users.h"
 #include <unistd.h>
+#include <pwd.h>
 
-void print_users() {
+void users(){
     struct passwd *pw;
-    setpwent();
-    while ((pw = getpwent()) != NULL) {
-        printf("%s: %s\n", pw->pw_name, pw->pw_dir);
-    }
+    while ((pw = getpwent()) != NULL)
+	fprintf(stdout, "Пользователь %s: %s\n", pw->pw_name, pw->pw_dir);
     endpwent();
 }
