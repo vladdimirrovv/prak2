@@ -1,19 +1,14 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include "errors.h"
 #include <unistd.h>
+#include <stdlib.h>
 
-static FILE *errors_file = NULL;
-
-void set_errors_file(const char *path) {
-    if (errors_file) {
-        fclose(errors_file);
+void errors(const char* lfp){
+    FILE* fp;
+    if ((fp = fopen(lfp, "w")) == NULL){
+	fprintf(stderr, "can't open error file for writing\n"); 
+	exit(1);
     }
-    errors_file = fopen(path, "w");
-    if (!errors_file) {
-        perror("fopen");
-        exit(EXIT_FAILURE);
-    }
-    dup2(fileno(errors_file), 2);
+    if (dup2(fileno(fp), 2) == -1)
+        fprintf(stderr, "can't redirect output\n");
+    fclose(fp);
 }
-
