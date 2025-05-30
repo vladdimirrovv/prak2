@@ -1,6 +1,5 @@
-#ifndef PROCESSES_H
-#define PROCESSES_H
-
-void print_processes();
-
-#endif // PROCESSES_H
+#ifndef Proc_h
+#define Proc_h
+#include <stdio.h>
+void processes();
+#endif
