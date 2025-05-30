@@ -1,7 +1,5 @@
-#ifndef ERRORS_H
-#define ERRORS_H
-
-void set_errors_file(const char *path);
-void log_error(const char *error);
-
-#endif // ERRORS_H
+#ifndef Error_h
+#define Error_h
+#include <stdio.h>
+void errors(const char* lfp);
+#endif
